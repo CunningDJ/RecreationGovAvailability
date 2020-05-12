@@ -1,7 +1,7 @@
 # Recreation.gov Availability Tool
 ## Introduction
 I built this tool one evening to help my sister see the availabile dates of all campsites
-for a given campground and year and months. When the main function
+for a given campground from Recreation.gov (all state and national parks), along with a set of months and year. It is written entirely in vanilla JS.  When the main function
 (`fetchAvailabilityAndDisplay`) is run, it fetches all the necessary data from
 the Recreation.gov API, aggregates and processes the fetched data for only the
 available dates, and visualizes the available dates in HTML.
