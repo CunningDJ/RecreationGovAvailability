@@ -1,3 +1,15 @@
+/*
+  Recreation.gov Campsite Availability
+  Fetches availabilty for a given campground and months, aggregates it and displays all availability dates in
+    those months.
+
+  Sample availability endpoint (with start date specifier):
+     https://www.recreation.gov/api/camps/availability/campground/232487/month?start_date=2020-08-01T00%3A00%3A00.000Z
+  Sample campsites endpoint:
+     https://www.recreation.gov/api/camps/campsites/4522
+
+*/
+
 const RESERVED = "Reserved";
 const AVAILABLE = "Available";
 let CAMPGROUND = 232487;
@@ -6,16 +18,6 @@ let AVAILABILITY_MONTHS = [7,8,9];
 
 const fetchCampsite = (campsite) => fetch(`https://www.recreation.gov/api/camps/campsites/${campsite}`);
 const fetchAvailability = (campground, year, monthNum) => fetch(`https://www.recreation.gov/api/camps/availability/campground/${campground}/month?start_date=${String(year).padStart(4,'20')}-${String(monthNum).padStart(2,'0')}-01T00%3A00%3A00.000Z`);
-
-let cd;
-/*
-  Campground: 232487
-  Availability endpoint (with start date specifier):
-     https://www.recreation.gov/api/camps/availability/campground/232487/month?start_date=2020-08-01T00%3A00%3A00.000Z
-
-     https://www.recreation.gov/api/camps/campsites/4522
-
-*/
 
 
 /* COPY FROM HERE DOWN */
@@ -100,7 +102,6 @@ function fetchAvailabilityAndDisplay(campgroundID, availabilityYear, availabilit
                         });
                         return agg;
                     }, { campsites: {} });
-                    //monthlyAvailabilities.map(displayCampsitesAvailability)
                     displayCampsitesAvailability(aggregatedAvailability);
                 })
         })
