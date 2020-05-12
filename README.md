@@ -13,7 +13,7 @@ errors.
 ## Possibilities
 The `fetch`-specific portions of the code could be swapped out for
 axios and then this could be run with NodeJS (except for the HTML part) as
-a CLI tool for fetching this data.
+a CLI tool for fetching this data.  If you do this, be polite with the data.  This tool was made for a single person to use here or there, not so that people could hammer the API with automated tools or the backend of a website. 
 
 ## Instructions
 1. Navigate to [https://recreation.gov]()
