@@ -10,18 +10,18 @@
 
 */
 
-const RESERVED = "Reserved";
-const AVAILABLE = "Available";
+const fetchCampsite = (campsite) => fetch(`https://www.recreation.gov/api/camps/campsites/${campsite}`);
+const fetchAvailability = (campground, year, monthNum) => fetch(`https://www.recreation.gov/api/camps/availability/campground/${campground}/month?start_date=${String(year).padStart(4,'20')}-${String(monthNum).padStart(2,'0')}-01T00%3A00%3A00.000Z`);
+
 let CAMPGROUND = 232487;
 let AVAILABILITY_YEAR = 2020;
 let AVAILABILITY_MONTHS = [7,8,9];
 
-const fetchCampsite = (campsite) => fetch(`https://www.recreation.gov/api/camps/campsites/${campsite}`);
-const fetchAvailability = (campground, year, monthNum) => fetch(`https://www.recreation.gov/api/camps/availability/campground/${campground}/month?start_date=${String(year).padStart(4,'20')}-${String(monthNum).padStart(2,'0')}-01T00%3A00%3A00.000Z`);
-
-
 /* COPY FROM HERE DOWN */
 function displayCampsitesAvailability(availabilityData) {
+    const RESERVED = "Reserved";
+    const AVAILABLE = "Available";
+
     const campsitesAvailability = availabilityData.campsites;
     // MAP: {
     //  [site name (e.g. 'A10')]: [availability table for that site]
