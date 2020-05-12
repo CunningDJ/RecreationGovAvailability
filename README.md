@@ -18,7 +18,7 @@ a CLI tool for fetching this data.  If you do this, be polite with the data.  Th
 ## Instructions
 1. Navigate to [https://recreation.gov]()
 2. Open the Chrome Developer Tools (or equivalent for another browser).
-3. Copy-paste [this code](/recreationGovAvailability) in.
+3. Copy-paste [this code](/recreationGovAvailability.js) in.
 
 To run it again with different parameters after running it the first time, run
 ```javascript
