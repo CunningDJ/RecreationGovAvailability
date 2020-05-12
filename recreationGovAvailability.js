@@ -81,7 +81,10 @@ function createAvailabilityTable(site, availDates) {
 
 function fetchAvailabilityAndDisplay(campgroundID, availabilityYear, availabilityMonths) {
     document.body.innerText = "";
-    document.title = `Availability: ${CAMPGROUND}`;
+    document.title = `Availability: ${campgroundID}`;
+    const header = document.createElement('h1');
+    header.innerText = `Availability: Campground ${campgroundID}`;
+    document.body.appendChild(header);
     Promise.all(availabilityMonths.map(availMonth => fetchAvailability(campgroundID, availabilityYear, availMonth)))
         .then(responses => {
             console.log(`Availability fetched`);
