@@ -13,16 +13,13 @@ errors.
 ## Possibilities
 The `fetch`-specific portions of the code could be swapped out for
 axios and then this could be run with NodeJS (except for the HTML part) as
-a CLI tool for fetching this data.  If you do this, be polite with the data.  This tool was made for a single person to use here or there, not so that people could hammer the API with automated tools or the backend of a website. 
+a CLI tool for fetching this data.  If you do this, be polite with the data.  This tool was made for a single person to use here or there, not so that people could hammer the API with automated tools or the backend of a website.
 
 ## Instructions
 1. Navigate to [https://recreation.gov]()
 2. Open the Chrome Developer Tools (or equivalent for another browser) and open the Console tab.
 3. Copy-paste [this code](/recreationGovAvailability.js) in the Console.
 
-To run it again with different parameters after running it the first time, run
-```javascript
-fetchAvailabilityAndDisplay([campground ID], [year], [months (array)])
-```
+The UI should appear.  From there, you can choose what campground ID, year, and months that you want to check availability. A sample campground ID and current year are provided as starting points.  Once submitted, all the available dates in the months requested will be given, along with key information about the campground.
 
-Have fun and let me know your thoughts!
+Have fun and let me know your thoughts/improvements!
