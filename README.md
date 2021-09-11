@@ -10,7 +10,7 @@ Just like any website, the campground ID and months and year can be changed and 
 Because this fetches from the Recreation.gov API, it must be run in the Chrome Developer Tools **after** navigating to the Recreation.gov webite in order to avoid CORS errors.
 
 ## Instructions
-1. Navigate to [https://recreation.gov]()
+1. Navigate to [https://recreation.gov](https://recreation.gov)
 2. Open the Chrome Developer Tools (or equivalent for another browser) and open the Console tab.
 3. Copy-paste [this code](/recreationGovAvailability.js) in the Console.
 
